@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DesignPattern
 {
@@ -10,6 +6,17 @@ namespace DesignPattern
     {
         static void Main(string[] args)
         {
+            Factory carFactory = new CarFactory();
+            Factory planeFactory = new PlaneFactory();
+
+            Vehicles car = carFactory.CreateVehicles();
+            Vehicles plane = planeFactory.CreateVehicles();
+
+            car.Use();
+            plane.Use();
+
+            Console.WriteLine("done.");
+            Console.ReadLine();
         }
     }
 }
