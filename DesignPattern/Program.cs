@@ -23,6 +23,16 @@ namespace DesignPattern
 
             americaFactory.CreateIOSPhone().PrintOrigin();
 
+            Builder highBuilder = new HighConfigComputerBuilder();
+            Builder lowBuilder = new LowConfigComputerBuilder();
+            Director director = new Director();
+
+            director.Construct(highBuilder);
+            highBuilder.GetComputer().Show();
+
+            director.Construct(lowBuilder);
+            lowBuilder.GetComputer().Show();
+
             Console.WriteLine("done.");
             Console.ReadLine();
         }
